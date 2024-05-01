@@ -1,0 +1,32 @@
+form.d-flex{
+    gap: 10px;
+}
+
+
+.btn-outline-success {
+    --bs-btn-color: #4a6c75;
+    --bs-btn-border-color: #4a6c75;
+    --bs-btn-hover-bg: #4a6c75;
+    --bs-btn-hover-border-color: #4a6c75;
+}
+
+
+
+.navbar-nav .nav-link.active{
+    border-bottom: #4a6c75 solid 2px;
+}
+
+nav img{
+    border-radius: 50%;
+    display: block;
+
+}
+
+.logoClass{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logoClass a{
+    cursor:default;
+}
