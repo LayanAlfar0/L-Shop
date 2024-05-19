@@ -1,79 +1,122 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 .hero {
-height: 100vh;
-    background-image:url("../../img/hero.png"); 
+    height: 100%;
+    background-image: url("../../img/hero.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 10px;
 }
-.heroContent{
+
+.heroContent {
     background-color: #f8f9fa;
-    display:flex ;
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 30px;
     gap: 8px;
-    width: 40%;
+    width: 50%;
+    height: 70%;
     border-radius: 18px;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
-.heroContent h2{
+
+.heroContent h2 {
     color: #4a6c75;
     font-size: 34px;
 
 }
-.heroContent h3{
-    color: hsl(34.29deg 4% 34.31%); 
+
+.heroContent h3 {
+    color: hsl(34.29deg 4% 34.31%);
     font-size: 14px;
-    
+
 }
-.heroContent p{
+
+.heroContent p {
     color: hsl(60deg 1.89% 31.18%);
+    overflow: auto;
 }
-.heroContent button{
+
+.heroContent button {
     color: #fff;
-    background-color:#4a6c75; 
+    background-color: #4a6c75;
     padding: 15px;
     border-radius: 18px;
     --bs-btn-color: #4a6c75;
-    --bs-btn-hover-border-color: #4a6c75  ;
+    --bs-btn-hover-border-color: #4a6c75;
     --bs-btn-hover-bg: #f9f4ea;
     --bs-btn-hover-border-color: #4a6c75;
     --bs-btn-hover-color: #4a6c75;
 }
-.Categorise{
-    margin-top: 50px;
+
+.Categorise {
+    margin-top: 30px;
 }
-.CategoriesHeader{
+
+.CategoriesHeader {
     margin: auto;
     text-align: center;
     margin-bottom: 30px;
 }
-.Categorise h2{
+
+.Categorise h2 {
     color: #4a6c75;
     font-family: "Montserrat", sans-serif;
     width: fit-content;
-    border-bottom:1px solid black ;
-    margin: auto
-    ;
-
+    border-bottom: 1px solid black;
+    margin: auto;
 }
-.Categorise .swiper{
+
+.Categorise .swiper {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 50px;
 }
 
-.swiper-wrapper .swiper-slide{
+.swiper-wrapper .swiper-slide {
     display: flex;
     justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .heroContent h2 {
+        font-size: 18px;
+    }
+
+    .heroContent p {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .heroContent h2 {
+        font-size: 26px;
+    }
+
+    .heroContent p {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 550px) {
+    .heroContent p {
+        height: 100px;
+    }
+
+    .heroContent {
+        width: 60%;
+    }
 }

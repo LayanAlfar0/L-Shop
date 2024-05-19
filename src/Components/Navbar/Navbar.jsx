@@ -3,19 +3,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle'
 import './Navbar.css'
 import logo from '../../img/logo.png'
-
 import { Link, NavLink } from 'react-router-dom';
 
 export default function Navbar() {
     return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <nav className="navbar navbar-expand-lg bg-body-tertiary main-navbar">
             <div className="container-fluid">
-
                 <div className="navbar navbar-light bg-light logoClass">
-                    <img src={logo} alt="Logo" width="50 px" height="50 px" className="d-inline-block align-top" />
-                    <a className="navbar-brand" href="#">
+                    <img src={logo} alt="Logo" width="40 px" height="40 px" className="d-inline-block align-top" />
+                    <Link className="navbar-brand" to="/">
                         L-Shop
-                    </a>
+                    </Link>
                 </div>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon" />
@@ -29,16 +27,15 @@ export default function Navbar() {
                             <NavLink className="nav-link" to='Products'>Products</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to='Cart#'>Cart</NavLink>
+                            <NavLink className="nav-link" to='Cart'>Cart</NavLink>
                         </li>
                     </ul>
-                    <form className="d-flex test" role="search">
-                        <button className="btn btn-outline-success" type="submit">SignIn</button>
-                        <button className="btn btn-outline-success" type="submit">SignUp</button>
+                    <form className="d-flex auth " role="search">
+                        <NavLink className="nav-link btn" to='signin'>SignIn</NavLink>
+                        <NavLink className="nav-link btn" to='signup'>SignUp</NavLink>
                     </form>
                 </div>
             </div>
         </nav>
-
     )
 }
