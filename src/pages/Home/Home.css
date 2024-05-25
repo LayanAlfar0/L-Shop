@@ -61,35 +61,7 @@
     --bs-btn-hover-color: #4a6c75;
 }
 
-.Categorise {
-    margin-top: 30px;
-}
 
-.CategoriesHeader {
-    margin: auto;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.Categorise h2 {
-    color: #4a6c75;
-    font-family: "Montserrat", sans-serif;
-    width: fit-content;
-    border-bottom: 1px solid black;
-    margin: auto;
-}
-
-.Categorise .swiper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 50px;
-}
-
-.swiper-wrapper .swiper-slide {
-    display: flex;
-    justify-content: center;
-}
 
 @media (max-width: 768px) {
     .heroContent h2 {
@@ -119,4 +91,26 @@
     .heroContent {
         width: 60%;
     }
+}
+
+.username {
+    margin-top: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #4a6c75;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #eeeeee;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.username:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

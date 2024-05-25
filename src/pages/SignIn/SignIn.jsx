@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './SignIn.css'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import swal from 'sweetalert';
+import { UserContext } from '../../Components/Contex/User';
 
 export default function SignIn() {
+	const { setUserToken } = useContext(UserContext);
 	const navigate = useNavigate();
 	const [user, setUser] = useState({
 		email: '',
@@ -23,11 +25,12 @@ export default function SignIn() {
 		e.preventDefault();
 		try {
 			const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/auth/signin`, user);
-			console.log(data);
+			// console.log(data);
 			localStorage.setItem('userToken', data.token);
 			swal({
 				text: "Congratulations, Sign In Successfully !",
 			});
+			setUserToken(data.token);
 			navigate('/')
 			setUser({
 				password: '',
@@ -53,9 +56,12 @@ export default function SignIn() {
 							<input type="password" name="password" required placeholder='Password' value={user.password} onChange={handleChange} />
 						</div>
 						<button type="submit">Sign In</button>
-						<p className="redirect">Don't have an account?
-							<Link to="/signup" > Sign Up here</Link>
-						</p>
+						<div className="likns">
+							<p className="redirect">Don't have an account?
+								<Link to="/signup" > Sign Up here</Link>
+							</p>
+							<p className="forget"><Link to="/sendCode" >forget your password?</Link></p></div>
+
 					</div>
 				</form>
 			</div>

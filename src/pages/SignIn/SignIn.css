@@ -27,17 +27,16 @@
 .signinContainer {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
 
 .input-group-signin {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     width: 100%;
 }
-
 
 .input-group-signin input {
     width: 100%;
@@ -61,17 +60,24 @@
     background-color: #4a6c75;
 }
 
-.redirect {
+.redirect,.forget{
     color: #555;
     font-weight: 500;
     text-align: center;
-    margin-top: 10px;
-    margin-bottom: 5px;
+    margin-top: 5px;
+    font-size: 14px;
+    margin-bottom: 3px;
 }
 
 .signinContainer p a {
     font-weight: 500;
     color: #222;
+}
+.likns{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .swal-overlay {
@@ -87,7 +93,6 @@
         margin-bottom: 5px;
         width: calc(100%);
     }
-
     .signin-form {
         width: calc(80%);
     }

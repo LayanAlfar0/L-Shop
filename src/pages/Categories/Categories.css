@@ -1,0 +1,48 @@
+.Categorise {
+    margin-top: 50px;
+}
+
+.CategoriesHeader {
+    margin: auto;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.Categorise h2 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    margin: auto;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 300;
+    color: #4a6c75;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-template-rows: 27px 0;
+    grid-gap: 20px;
+    align-items: center;
+}
+.CategoriesHeader h2:after,
+.CategoriesHeader h2:before {
+    content: " ";
+    display: block;
+    border-bottom: 1px solid #4a6c75;
+    border-top: 1px solid #4a6c75;
+    height: 5px;
+    background-color: #f8f8f8;
+}
+
+
+.Categorise .swiper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.swiper-wrapper .swiper-slide {
+    display: flex;
+    justify-content: center;
+}

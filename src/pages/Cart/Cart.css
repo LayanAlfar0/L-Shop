@@ -1,0 +1,167 @@
+.title {
+    margin-bottom: 5vh;
+}
+
+.card {
+    margin: auto;
+    width: 90%;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1rem;
+    border: transparent;
+    margin-top: 20px;
+    display: flex;
+}
+.img-fluid{
+    width: 100%;
+}
+
+
+.cart {
+    background-color: #fff;
+    padding: 4vh 5vh;
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+    width: 100%;
+}
+
+@media(max-width:767px) {
+    .cart {
+        padding: 4vh;
+        border-bottom-left-radius: unset;
+        border-top-right-radius: 1rem;
+    }
+}
+
+.productCard {
+    display: flex;
+    align-items: center;
+}
+
+.summary {
+    color: rgb(65, 65, 65);
+    margin-bottom: 20px;
+}
+
+.summaryContainer {
+    display: flex;
+    justify-content: end;
+}
+
+
+@media(max-width:767px) {
+    .summary {
+        border-top-right-radius: unset;
+        border-bottom-left-radius: 1rem;
+    }
+}
+
+@media(max-width:500px) {
+    .card{
+        width: 100%;
+    }
+    .text-muted{
+        font-size: 14px;
+    }
+    .col-md-8 .cart{
+        padding: 0;
+    }
+}
+
+
+.summary .col-2 {
+    padding: 0;
+}
+.imgContainer{
+    flex: 1;
+}
+
+.summary .col-10 {
+    padding: 0;
+}
+
+.card .row {
+    margin: 0;
+}
+
+.card .title h2 {
+    color: #4a6c75;
+}
+
+.card .main {
+    margin: 0;
+    padding: 2vh 0;
+    width: 100%;
+}
+
+.col-2,
+.col {
+    padding: 0 1vh;
+}
+
+.card a{
+    padding: 0 1vh;
+    text-decoration: none;
+}
+button .close {
+    margin-left: auto;
+    font-size: 1rem;
+}
+
+.col-2 img {
+    width: 3.5rem;
+}
+
+
+.summary h5 {
+    color: #4a6c75;
+    margin-top: 4vh;
+}
+
+hr {
+    margin-top: 1.25rem;
+}
+
+
+
+.summary .btn,.clearCart {
+    padding: 10px;
+    border: #4a6c75 1px solid;
+    color: #4a6c75;
+}
+
+.summary .btn:hover , .clearCart:hover {
+    color: #eee;
+    background-color: #4a6c75;
+    border: #4a6c75 1px solid;
+}
+.productCard button {
+    border: none;
+    background-color: #fff;
+    padding: 5px;
+    width: 20px;
+}
+
+.productCard a {
+    color: black;
+}
+
+.productCard a:hover {
+    color: black;
+    text-decoration: none;
+}
+.clearCart{
+    display: flex;
+    justify-content: start;
+    width: fit-content;
+    margin-left: 55px;
+}
+.productCard .quantityControl{
+    display: flex;
+    align-items: center;
+}
+
+.quantityControl span {
+    display: flex;
+    width: 20px;
+    justify-content: center;
+}

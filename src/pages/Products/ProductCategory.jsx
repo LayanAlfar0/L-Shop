@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import './ProductCategory.css'
@@ -8,13 +8,14 @@ import { MdFavorite } from "react-icons/md";
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Loader from '../../Components/Loader/Loader';
+import { Slide, toast } from 'react-toastify';
 
 export default function ProductCategory() {
     const [error, setError] = useState('');
     const [loader, setLoader] = useState(true);
     const { _id } = useParams();
-    const [categories, setCategories] = useState([]);
     const [products, setProducts] = useState([]);
+    const [categories, setCategories] = useState([]);
     const getCategories = async () => {
         try {
             setLoader(true);
@@ -61,6 +62,45 @@ export default function ProductCategory() {
     if (products.length === 0) {
         return <p>Empty products !!!</p>;
     }
+
+    const token = localStorage.getItem('userToken');
+    const addToCart = async (productId) => {
+        try {
+            const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/cart`,
+                { productId },
+                {
+                    headers: {
+                        Authorization: `Tariq__${token}`
+                    }
+                }
+            );
+            // console.log(data);
+            toast.success('Product added to Cart Successfully!', {
+                position: "bottom-right",
+                autoClose: false,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Slide,
+            });
+        } catch (error) {
+            // console.log(error.response.data.message);
+            toast.error(error.response.data.message, {
+                position: "bottom-right",
+                autoClose: false,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Slide,
+            });
+        }
+    }
     return (
         <>
             {error ?? <h2>Error ....</h2>}
@@ -85,7 +125,7 @@ export default function ProductCategory() {
                         {(products.length > 0) ? products.map(
                             product => (
                                 <>
-                                    <div className="col-md-4" key={product._id}>
+                                    <div className="col-md-6 col-lg-4 " key={product._id}>
                                         <div className="product-card">
                                             <div className="product-card-img">
                                                 <Swiper
@@ -114,13 +154,14 @@ export default function ProductCategory() {
                                                     </a>
                                                 </h5>
                                                 <div>
-                                                    <span className="selling-price">{product.finalPrice}</span>
-                                                    <span className="original-price">{product.price}</span>
+                                                    <span className="selling-price"><span>$</span>{product.finalPrice}</span>
+                                                    {/* <span className="original-price">{product.price}</span> */}
+                                                    {product.finalPrice != product.price ? <span className="original-price"><span>$</span>{product.price}</span> : null}
                                                 </div>
                                                 <div className="mt-2">
-                                                    <a href="#" className="btn btn1">Add To Cart</a>
-                                                    <a href="#" className="btn btn1"> <MdFavorite /></a>
-                                                    <a href="#" className="btn btn1"> View </a>
+                                                    <button onClick={() => addToCart(product._id)} className="btn btn1 expandable">Add To Cart</button>
+                                                    <button className="btn btn1"> <MdFavorite /></button>
+                                                    <Link to={`/product/${product._id}`} className="btn btn1" > View </Link>
                                                 </div>
                                             </div>
                                         </div>

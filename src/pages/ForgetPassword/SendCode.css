@@ -1,0 +1,145 @@
+.sendCode .input-group-signin label {
+    margin-bottom: 10px;
+}
+
+/*  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}*/
+
+.sendCode {
+
+    font-size: 16px;
+    transition: all 500ms ease;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(#e66465, #9198e5);
+    margin-top: 0;
+    padding: 2rem;
+} 
+
+.sendCode .row {
+    background-color: rgb(238 238 238);
+    color: #333;
+    text-align: center;
+    padding: 2em 2em 0.5em;
+    width: 80%;
+    margin: auto;
+    border-radius: 5px;
+    font-family: "segoe ui", verdana, helvetica, arial, sans-serif;
+    margin-top: 2rem;
+}
+
+.sendCode .row h1 {
+    font-size: 2.5em;
+}
+
+.sendCode .row .form-group {
+    margin: 0.5em 0;
+}
+
+.sendCode .row .form-group label {
+    display: block;
+    color: #333;
+    text-align: left;
+    font-weight: 600;
+}
+
+.sendCode .row .form-group input,
+.sendCode .row .form-group button {
+    display: block;
+    padding: 0.5em 0;
+    width: 100%;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    background-color: inherit;
+    border: none;
+    border-bottom: 1px solid #555;
+    color: #eee;
+}
+.sendCode .row .form-group button{
+    background-color: #4a6c75;
+}
+.sendCode .row .form-group input:focus,
+.sendCode .row .form-group button:focus {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 1em 0.5em;
+    animation: pulse 1s infinite ease;
+}
+
+.sendCode .row .form-group button {
+    border: 1px solid #fff;
+    border-radius: 5px;
+    outline: none;
+    -moz-user-select: none;
+    user-select: none;
+    color: #fff;
+    font-weight: 800;
+    cursor: pointer;
+    margin-top: 2em;
+    padding: 1em;
+}
+
+.sendCode .row .form-group button:hover,
+.sendCode .row .form-group button:focus {
+    background-color: #fff;
+    border: #4a6c75 solid 1.5px;
+    color: #4a6c75;
+}
+
+.sendCode .row .form-group button.is-loading::after {
+    animation: spinner 500ms infinite linear;
+    content: "";
+    position: absolute;
+    margin-left: 2em;
+    border: 2px solid #000;
+    border-radius: 100%;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    height: 1em;
+    width: 4%;
+}
+
+.sendCode .row .footer h5 {
+    margin-top: 1em;
+    font-size: 14px;
+}
+
+.sendCode .row .footer p {
+    margin-top: 2em;
+}
+
+.sendCode .row .footer p .symbols {
+    color: #444;
+}
+
+.sendCode .row .footer a {
+    color: inherit;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.sendCode .information-text {
+    color: #333;
+}
+
+@media screen and (max-width: 320px) {
+    .sendCode .row {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+    .sendCode .row h1 {
+        font-size: 1.5em !important;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .sendCode .row {
+        width: 50%;
+    }
+}

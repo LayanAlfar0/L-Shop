@@ -12,8 +12,12 @@ import SignIn from './pages/SignIn/SignIn';
 import SignUp from './pages/SignUp/SignUp';
 import ProductCategory from './pages/Products/ProductCategory';
 import ProtectedRoutes from './Components/ProtectedRoutes';
+import UserContextProvider from './Components/Contex/User';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Product from './pages/Products/Product';
+import ForgetPass from './pages/ForgetPassword/ForgetPass';
+import SendCode from './pages/ForgetPassword/SendCode';
 
 export default function App() {
 	const router = createBrowserRouter([
@@ -52,12 +56,28 @@ export default function App() {
 					path: `products/category/:_id`,
 					element: <ProductCategory />,
 				},
+				{
+					path: '/product/:id',
+					element: <Product/>,
+				},
+				{
+					path: "forgetPassword",
+					element: <ForgetPass />,
+				},
+				{
+					path: "sendCode",
+					element: <SendCode />,
+				},
 			],
 		},
 	]);
 	return (
 		<>
-			<RouterProvider router={router} />
+			<UserContextProvider>
+				<RouterProvider router={router} />
+			</UserContextProvider>
+			<ToastContainer />
+
 		</>
 	)
 }
